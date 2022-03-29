@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  tekton-central:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-03-29T14:17:48.150442+02:00"
+    description: Helm Chart for a central Tekton pipeline
+    digest: 503b98df145598f583814335b03bf826332fef4cbfad64d3e4ac0648a43cfe02
+    name: tekton-central
+    type: application
+    urls:
+    - https://philippselle.github.io/helm-repo/tekton-central-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-03-29T14:17:48.148847+02:00"

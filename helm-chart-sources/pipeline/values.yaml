@@ -1,0 +1,4 @@
+workspace:
+  pvcName: pipeline-workspace
+applications:
+  - appName: backend
