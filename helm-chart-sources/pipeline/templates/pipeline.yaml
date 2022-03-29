@@ -3,7 +3,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
-  name: {{ .appName}}-pipeline2a
+  name: {{ .appName}}-pipeline
 spec:
   params:
     - description: URL of the git repo
