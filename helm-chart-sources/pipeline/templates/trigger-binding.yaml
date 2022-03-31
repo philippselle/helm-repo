@@ -1,6 +1,6 @@
 {{- range .Values.applications }}
 ---
-on: triggers.tekton.dev/v1alpha1
+apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerBinding
 metadata:
   name: {{ .appName}}-triggerbinding
