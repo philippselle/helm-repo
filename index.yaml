@@ -3,7 +3,17 @@ entries:
   tekton-central:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2022-03-31T19:00:47.696141+02:00"
+    created: "2022-03-31T19:01:05.110825+02:00"
+    description: Helm Chart for a central Tekton pipeline
+    digest: 54d79a3a335e34496a507fdb9fb763e654908d06e329059fe40cc5047aaf9be1
+    name: tekton-central
+    type: application
+    urls:
+    - https://philippselle.github.io/helm-repo/tekton-central-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2022-03-31T19:01:05.110514+02:00"
     description: Helm Chart for a central Tekton pipeline
     digest: 02e7710e2e13160843ea109d8ecedf9b44b1e78d1fe87b798d222ff7981c85f6
     name: tekton-central
@@ -13,7 +23,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2022-03-31T19:00:47.695386+02:00"
+    created: "2022-03-31T19:01:05.110141+02:00"
     description: Helm Chart for a central Tekton pipeline
     digest: 60712700049562f68c38df278e56b47fe62658f75f26126d41cb6c3daa2a3fc5
     name: tekton-central
@@ -23,7 +33,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2022-03-31T19:00:47.695041+02:00"
+    created: "2022-03-31T19:01:05.109801+02:00"
     description: Helm Chart for a central Tekton pipeline
     digest: aedbefcaf908afa40f738f4cbcae0eac6abb08b1c2a4f2f7ad78b06ea4c58c0e
     name: tekton-central
@@ -33,7 +43,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2022-03-31T19:00:47.694683+02:00"
+    created: "2022-03-31T19:01:05.109449+02:00"
     description: Helm Chart for a central Tekton pipeline
     digest: e7500130c08b434314c10df2fcf627a1958fb5d8c0cb78e50b5c906ff960e3e3
     name: tekton-central
@@ -61,4 +71,4 @@ entries:
     urls:
     - https://philippselle.github.io/helm-repo/tekton-central-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-31T19:00:47.694075+02:00"
+generated: "2022-03-31T19:01:05.108839+02:00"
