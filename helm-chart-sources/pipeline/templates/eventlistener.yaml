@@ -8,14 +8,14 @@ spec:
     {{- range .Values.applications }}
     - name: {{ .appName}}-trigger
       interceptors:
-        - github:
-            secretRef:
-              secretName: webhook-secret
-              secretKey: secret
-            eventTypes:
-              - push
+        - ref:
+            name: "cel"
+          params:
+            - name: "filter"
+              value: "body.html_url == '{{ .gitURL }}'"
       bindings:
-        - ref: {{ .appName}}-triggerbinding
+        - kind: TriggerBinding
+          ref: {{ .appName}}-triggerbinding
       template:
         ref: {{ .appName}}-triggertemplate
     {{- end}}

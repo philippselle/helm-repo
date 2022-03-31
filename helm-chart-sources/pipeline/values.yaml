@@ -1,3 +1,4 @@
 applications:
   - appName: sample
     imageURL: quay.io/sellep/sample
+    gitURL: https://github.com/philippselle/helm-repo
