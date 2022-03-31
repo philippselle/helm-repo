@@ -1,7 +1,9 @@
+{{- range .Values.applications }}
+---
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{.Values.workspace.pvcName }}
+  name: {{ .appName}}-pvc
 spec:
   accessModes:
     - ReadWriteOnce
@@ -9,3 +11,4 @@ spec:
     requests:
       storage: 5Gi
   volumeMode: Filesystem
+{{- end}}

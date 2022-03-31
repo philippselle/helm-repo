@@ -1,0 +1,15 @@
+{{- range .Values.applications }}
+---
+on: triggers.tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  name: {{ .appName}}-triggerbinding
+spec:
+  params:
+    - name: gitrevision
+      value: $(body.head_commit.id)
+    - name: gitrepositoryurl
+      value: $(body.repository.url)
+    - name: imageurl
+      value: {{ .imageURL}}
+{{- end}}

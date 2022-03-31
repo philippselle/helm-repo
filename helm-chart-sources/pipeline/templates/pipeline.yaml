@@ -13,31 +13,34 @@ spec:
       description: Revision/Branch of git repo
       name: GIT_REV
       type: string
+    - description: Name and tag of the new created image
+      name: IMAGE
+      type: string
   tasks:
-    - name: checkout-scm
-      params:
-        - name: url
-          value: $(params.GIT_REPO)
-        - name: revision
-          value: $(params.GIT_REV)
-      taskRef:
-        kind: ClusterTask
-        name: poc-git-clone-clustertask
-      workspaces:
-        - name: output
-          workspace: shared-data
-    - name: checkout-scm2
-      params:
-        - name: url
-          value: $(params.GIT_REPO)
-        - name: revision
-          value: $(params.GIT_REV)
-      taskRef:
-        kind: ClusterTask
-        name: poc-git-clone-clustertask
-      workspaces:
-        - name: output
-          workspace: shared-data
+  - name: checkout-git
+    params:
+      - name: url
+        value: $(params.GIT_REPO)
+      - name: revision
+        value: $(params.GIT_REV)
+    taskRef:
+      kind: ClusterTask
+      name: git-clone
+    workspaces:
+      - name: output
+        workspace: shared-data
+  - name: container-build-and-push
+    params:
+      - name: IMAGE
+        value: $(params.IMAGE)
+    runAfter:
+      - checkout-git
+    taskRef:
+      kind: ClusterTask
+      name: buildah
+    workspaces:
+      - name: source
+        workspace: shared-data
   workspaces:
     - description: This workspace will receive the cloned git repo.
       name: shared-data

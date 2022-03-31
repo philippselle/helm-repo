@@ -1,0 +1,33 @@
+{{- range .Values.applications }}
+---
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerTemplate
+metadata:
+  name: {{ .appName}}-triggertemplate
+spec:
+  params:
+    - description: URL of the git repo
+      name: gitrepositoryurl
+    - description: Revision of git commit
+      name: gitrevision
+    - description: Full url of the container image (incl. image registry) 
+      name: imageurl
+  resourcetemplates:
+    - apiVersion: tekton.dev/v1alpha1
+      kind: PipelineRun
+      metadata:
+        generateName: {{ .appName}}-pipeline-run-
+      spec:
+        pipelineRef:
+          name: {{ .appName}}-pipeline
+        serviceAccountName: pipeline
+        workspaces:
+          - name: shared-data
+            persistentVolumeClaim:
+              claimName: {{ .appName}}-pvc
+        params:
+          - name: GIT_REPO
+            value: $(tt.params.gitrepositoryurl)
+          - name: IMAGE
+            value: '$(tt.params.imageurl):$(tt.params.gitrevision)'
+{{- end}}

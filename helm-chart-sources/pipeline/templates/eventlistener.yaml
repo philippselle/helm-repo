@@ -1,0 +1,21 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: EventListener
+metadata:
+  name: eventlistener
+spec:
+  serviceAccountName: pipeline
+  triggers:
+    {{- range .Values.applications }}
+    - name: {{ .appName}}-trigger
+      interceptors:
+        - github:
+            secretRef:
+              secretName: webhook-secret
+              secretKey: secret
+            eventTypes:
+              - push
+      bindings:
+        - ref: {{ .appName}}-triggerbinding
+      template:
+        ref: {{ .appName}}-triggertemplate
+    {{- end}}
