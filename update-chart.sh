@@ -14,3 +14,7 @@ git add .
 git commit -m "update Helm Chart"
 
 git push
+
+echo "####"
+echo "New Helm Chart released: $NEXTVERSION"
+echo "####"
