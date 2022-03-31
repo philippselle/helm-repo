@@ -1,2 +1,3 @@
 applications:
   - appName: sample
+    imageURL: quay.io/sellep/sample
