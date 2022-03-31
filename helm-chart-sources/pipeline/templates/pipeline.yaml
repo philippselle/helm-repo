@@ -41,18 +41,6 @@ spec:
     workspaces:
       - name: source
         workspace: shared-data
-  - name: container-build-and-push-2
-    params:
-      - name: IMAGE
-        value: $(params.IMAGE)
-    runAfter:
-      - checkout-git
-    taskRef:
-      kind: ClusterTask
-      name: buildah
-    workspaces:
-      - name: source
-        workspace: shared-data
   workspaces:
     - description: This workspace will receive the cloned git repo.
       name: shared-data
