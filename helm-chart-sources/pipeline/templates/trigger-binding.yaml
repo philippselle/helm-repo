@@ -4,6 +4,9 @@ apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerBinding
 metadata:
   name: {{ .appName}}-triggerbinding
+  {{- if .projectname }}
+  namespace: {{ .projectname }}
+  {{-- end }}
 spec:
   params:
     - name: gitrevision
