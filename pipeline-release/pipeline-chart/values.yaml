@@ -1,9 +1,0 @@
-applications:
-  - projectName: demo-ps-b
-    appName: proj-b-frontend
-    imageURL: quay.io/sellep/frontend
-    gitURL: https://github.ibm.com/sellep/docap-poll-app-client
-  - projectName: demo-ps-c
-    appName: proj-c-frontend
-    imageURL: quay.io/sellep/frontend
-    gitURL: https://github.ibm.com/sellep/docap-poll-app-client
