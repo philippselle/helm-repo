@@ -6,7 +6,7 @@ metadata:
   name: {{ .appName}}-pipeline
   {{- if .projectname }}
   namespace: {{ .projectname }}
-  {{-- end }}
+  {{- end }}
 spec:
   params:
     - description: URL of the git repo

@@ -6,7 +6,7 @@ metadata:
   name: {{ .appName}}-pvc
   {{- if .projectname }}
   namespace: {{ .projectname }}
-  {{-- end }}
+  {{- end }}
 spec:
   accessModes:
     - ReadWriteOnce

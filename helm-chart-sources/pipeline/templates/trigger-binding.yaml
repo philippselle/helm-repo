@@ -6,7 +6,7 @@ metadata:
   name: {{ .appName}}-triggerbinding
   {{- if .projectname }}
   namespace: {{ .projectname }}
-  {{-- end }}
+  {{- end }}
 spec:
   params:
     - name: gitrevision
