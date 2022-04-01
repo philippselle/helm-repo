@@ -4,6 +4,7 @@ apiVersion: triggers.tekton.dev/v1alpha1
 kind: TriggerTemplate
 metadata:
   name: {{ .appName}}-triggertemplate
+  namespace: {{ .projectName }}
 spec:
   params:
     - description: URL of the git repo
