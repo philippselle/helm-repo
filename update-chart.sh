@@ -5,6 +5,8 @@ NEXTVERSION=$(echo ${VERSION} | awk -F. -v OFS=. '{$NF += 1 ; print}')
 
 sed -i '' 's,'"$VERSION"', '"$NEXTVERSION"',' helm-chart-sources/pipeline/Chart.yaml 
 
+sed -i '' 's,'"$VERSION"', '"$NEXTVERSION"',' pipeline-release/Chart.yaml 
+
 helm package helm-chart-sources/pipeline
 
 helm repo index --url https://philippselle.github.io/helm-repo/ --merge index.yaml .
