@@ -15,7 +15,7 @@ spec:
             name: "cel"
           params:
             - name: "filter"
-              value: "body.html_url == '{{ .gitURL }}'"
+              value: "body.repository.html_url == '{{ .gitURL }}'"
       bindings:
         - kind: TriggerBinding
           ref: {{ .appName}}-triggerbinding
