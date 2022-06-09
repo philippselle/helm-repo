@@ -1,0 +1,22 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: eventlistener
+  {{- if .projectname }}
+  namespace: {{ .projectname }}
+  {{- end }}
+  labels:
+    app.kubernetes.io/instance: pipeline
+    app.kubernetes.io/managed-by: EventListener
+    app.kubernetes.io/part-of: Triggers
+    eventlistener: eventlistener
+spec:
+  to:
+    kind: Service
+    name: el-eventlistener
+    weight: 100
+  port:
+    targetPort: http-listener
+  tls:
+    termination: edge
+  wildcardPolicy: None
